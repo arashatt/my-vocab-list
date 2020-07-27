@@ -7,33 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="the better version&#10;-user preferences directory&#10;-all lists in TabPane&#10;-if use close request any tab it will automaticly close if no changes detected">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/untitled8_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/PreferenceClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/StickyNote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled8/module-info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/ChooseFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/ChooseFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/Dictionary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/List$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/List$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/List$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/List$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/List$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/List$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/List$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/List$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/List$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/List.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/List.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/ListOfDics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/ListOfDics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/LoadingFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/LoadingFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ChooseFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ChooseFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/List.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/LoadingFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/LoadingFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled8.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/StickyNote.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +105,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/untitled8" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -242,8 +217,16 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1595744170631" duration="823000" />
       <workItem from="1595876527897" duration="468000" />
-      <workItem from="1595880403012" duration="10607000" />
+      <workItem from="1595880403012" duration="11863000" />
     </task>
+    <task id="LOCAL-00001" summary="the better version&#10;-user preferences directory&#10;-all lists in TabPane&#10;-if use close request any tab it will automaticly close if no changes detected">
+      <created>1595892201835</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595892201836</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +235,8 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="the better version&#10;-user preferences directory&#10;-all lists in TabPane&#10;-if use close request any tab it will automaticly close if no changes detected" />
+    <option name="LAST_COMMIT_MESSAGE" value="the better version&#10;-user preferences directory&#10;-all lists in TabPane&#10;-if use close request any tab it will automaticly close if no changes detected" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="31" key="#Project_Structure" timestamp="1595876937492">
@@ -283,50 +267,50 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="127" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1366.738@0.0.1366.738" timestamp="1595744187341" />
-    <state x="46" y="0" key="CommitChangelistDialog2" timestamp="1595892178755">
+    <state x="46" y="0" key="CommitChangelistDialog2" timestamp="1595892200382">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="46" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1595892178755" />
+    <state x="46" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1595892200382" />
     <state x="129" y="62" key="DiffContextDialog" timestamp="1595892023634">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="129" y="62" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1595892023634" />
-    <state x="463" y="114" key="FileChooserDialogImpl" timestamp="1595876589131">
+    <state x="463" y="114" key="FileChooserDialogImpl" timestamp="1595892875827">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="114" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1595876589131" />
+    <state x="463" y="114" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1595892875827" />
     <state x="521" y="287" width="347" height="163" key="Github.CreateGistDialog" timestamp="1595744860959">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="521" y="287" width="347" height="163" key="Github.CreateGistDialog/0.0.1366.738@0.0.1366.738" timestamp="1595744860959" />
-    <state width="1323" height="91" key="GridCell.Tab.0.bottom" timestamp="1595892178821">
+    <state width="1323" height="91" key="GridCell.Tab.0.bottom" timestamp="1595893424313">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="91" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1595892178821" />
+    <state width="1323" height="91" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1595893424313" />
     <state width="1877" height="91" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1595891284949" />
-    <state width="1323" height="91" key="GridCell.Tab.0.center" timestamp="1595892178820">
+    <state width="1323" height="91" key="GridCell.Tab.0.center" timestamp="1595893424313">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="91" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1595892178820" />
+    <state width="1323" height="91" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1595893424313" />
     <state width="1877" height="91" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1595891284948" />
-    <state width="1323" height="91" key="GridCell.Tab.0.left" timestamp="1595892178820">
+    <state width="1323" height="91" key="GridCell.Tab.0.left" timestamp="1595893424313">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="91" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1595892178820" />
+    <state width="1323" height="91" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1595893424313" />
     <state width="1877" height="91" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1595891284948" />
-    <state width="1323" height="91" key="GridCell.Tab.0.right" timestamp="1595892178821">
+    <state width="1323" height="91" key="GridCell.Tab.0.right" timestamp="1595893424313">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="91" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1595892178821" />
+    <state width="1323" height="91" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1595893424313" />
     <state width="1877" height="91" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1595891284949" />
     <state x="463" y="171" key="SettingsEditor" timestamp="1595891436184">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="463" y="171" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1595891436184" />
-    <state x="694" y="411" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595886541045">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="494" y="289" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595892208649">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="494" y="289" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1595884781276" />
+    <state x="494" y="289" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1595892208649" />
     <state x="694" y="411" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1595886541045" />
     <state x="65" y="97" key="new project wizard" timestamp="1595876708247">
       <screen x="0" y="0" width="1366" height="738" />
