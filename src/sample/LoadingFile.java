@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.util.TreeSet;
 
 public class LoadingFile {
-    FileReader save  = null;
+    FileReader save = null;
     TreeSet<String> strings = null;
 
     public FileReader getSave() {
@@ -40,7 +40,7 @@ public class LoadingFile {
             File saved = new File("list.txt");
             //   saved.createNewFile();
             this.save = new FileReader(saved);
-        }catch (NullPointerException nu){
+        } catch (NullPointerException nu) {
 
         }
 
@@ -55,24 +55,26 @@ public class LoadingFile {
         }
         return strings;
     }
-    public TreeSet<String> addOneWord(String s ){
+
+    public TreeSet<String> addOneWord(String s) {
         System.out.println("one word invoked");
-        if(ifAlfabet(s)) {
+        if (ifAlfabet(s)) {
             System.out.println("checked and added");
             strings.add(s);
         }
 
         return strings;
     }
-    public static boolean ifAlfabet(String s){
-        char[]chars = s.toLowerCase().toCharArray();
-        for(char c : chars){
-            if(!(c >='a' && c <='z' || c ==' ' || c == '-')){
+
+    public static boolean ifAlfabet(String s) {
+        char[] chars = s.toLowerCase().toCharArray();
+        for (char c : chars) {
+            if (!(c >= 'a' && c <= 'z' || c == ' ' || c == '-')) {
                 return false;
             }
         }
-        if(s.isEmpty())return false;
-        if(s.equals(" "))return false;
+        if (s.isEmpty()) return false;
+        if (s.equals(" ")) return false;
 
         return true;
     }

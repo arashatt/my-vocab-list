@@ -3,9 +3,11 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -32,44 +34,67 @@ import java.net.URLEncoder;
 import java.util.TreeSet;
 
 public class List {
-
-ListOfDics listOfDics = new ListOfDics();
+    Tab tab = new Tab();
+    ListOfDics listOfDics = new ListOfDics();
     ListView<String> listOfWords = new ListView<>();
     TreeSet<String> strings = new TreeSet<>();
     TextField input = new TextField();
     VBox root = new VBox();
-    Stage stage = new Stage();
-    Scene scene;
     LoadingFile loader = new LoadingFile();
-    ChooseFile choose = new ChooseFile(stage);
     File file;
     TextField search = new TextField();
     Button chooseFile = new Button("Choose File");
     Button save1 = new Button("Save the changes");
-    HBox hb = new HBox(chooseFile,save1);
+    HBox hb = new HBox(chooseFile, save1);
     String undo = "";
 
-    public List() throws Exception, NullPointerException {
+    public List(File file) {
+        this.file = file;
+    }
+
+    public Tab list() throws Exception, NullPointerException {
+
         hb.setSpacing(5);
         search.setPromptText("Search");
         search.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
             public void handle(ActionEvent event) {
+                if (strings.contains(search.getText())) {
+                    listOfWords.scrollTo(search.getText());
+                    listOfWords.getSelectionModel().select(search.getText());
+                    listOfWords.getFocusModel().focus(listOfWords.getItems().indexOf(search.getText()));
+                    search.clear();
 
-                listOfWords.scrollTo(search.getText());
-                listOfWords.getSelectionModel().select(search.getText());
-                listOfWords.getFocusModel().focus(listOfWords.getItems().indexOf(search.getText()));
-             //   System.out.println("yeey"+      listOfWords.getFocusModel().isFocused(listOfWords.getItems().indexOf(search.getText()) ));                search.clear();
+                } else {
+                    for (String s : strings) {
+
+                        if (s.substring(0, search.getText().length()).equals(search.getText())) {
+                            listOfWords.scrollTo(s);
+                            listOfWords.getSelectionModel().select(s);
+                            listOfWords.getFocusModel().focus(listOfWords.getItems().indexOf(s));
+                            search.clear();
+                            break;
+                        }
+                    }
+                }
+
+                //   System.out.println("yeey"+      listOfWords.getFocusModel().isFocused(listOfWords.getItems().indexOf(search.getText()) ));                search.clear();
+                listOfWords.requestFocus();
+
+                System.out.println(listOfWords.isFocused());
+
             }
 
         });
-        save1.setOnAction(e->{
+        save1.setOnAction(e -> {
             SaveTheCurrent(file);
         });
         chooseFile.setOnAction(e -> {
 
             try {
+                ChooseFile choose = new ChooseFile();
+
                 strings.addAll(loader.load(choose.getFile()));
                 listOfWords.getItems().clear();
                 listOfWords.getItems().addAll(strings);
@@ -78,10 +103,10 @@ ListOfDics listOfDics = new ListOfDics();
             }
         });
         try {
-            file = choose.getFile();
+
             strings = loader.load(file);
             listOfWords.getItems().addAll(strings);
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
 
         }
 
@@ -98,25 +123,11 @@ ListOfDics listOfDics = new ListOfDics();
             public void handle(MouseEvent event) {
                 if (event.getButton().equals(MouseButton.PRIMARY)) {
                     if (event.getClickCount() == 2) {
-                        try {
-                            Desktop desktop = Desktop.getDesktop();
-                            URI oURL = new URI(listOfDics.getComboBox().getSelectionModel().getSelectedItem().site + listOfWords.getSelectionModel().getSelectedItem());
-                            desktop.browse(oURL);
-                        } catch (Exception ex) {
-                            ex.printStackTrace();
-                        }
+                        openInBrowser();
                     }
                 } else if (event.getButton().equals(MouseButton.SECONDARY)) {
 
                 }
-            }
-        });
-        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-
-            @Override
-            public void handle(WindowEvent event) {
-                event.consume();
-                exit();
             }
         });
 
@@ -126,20 +137,7 @@ ListOfDics listOfDics = new ListOfDics();
                 if (event.getCode().equals(KeyCode.ENTER)) {
 
 
-
-
-
-                    try {
-                        Desktop desktop = Desktop.getDesktop();
-
-                        String encodeURL= URLEncoder.encode( listOfDics.getComboBox().getSelectionModel().getSelectedItem().site + listOfWords.getSelectionModel().getSelectedItem(), "UTF-8" );
-                        desktop.browse(new URI(encodeURL));
-                        ;
-                    } catch (UnsupportedEncodingException | URISyntaxException e) {
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
+                    openInBrowser();
 
                 }
                 if (event.getCode().equals(KeyCode.DELETE)) {
@@ -164,17 +162,43 @@ ListOfDics listOfDics = new ListOfDics();
                         listOfWords.getItems().addAll(loader.addOneWord(undo));
                     }
                 }
+                if (event.getText().toLowerCase().charAt(0) >= 'a' || event.getText().toLowerCase().charAt(0) <= 'z') {
+                    for (String s : strings) {
 
+                        if (s.charAt(0) == event.getText().toLowerCase().charAt(0)) {
+                            listOfWords.scrollTo(s);
+                            listOfWords.getSelectionModel().select(s);
+                            listOfWords.getFocusModel().focus(listOfWords.getItems().indexOf(s));
+                            search.clear();
+                            break;
+                        }
+                    }
+                }
             }
         });
 
         root = new VBox(input, search, listOfWords, listOfDics.getComboBox(), hb);
         root.setSpacing(15);
-        root.setPadding((new Insets(10, 50, 50, 50)));
-        scene = new Scene(root);
-        stage.setTitle("LIST Of WORDS");
-        stage.setScene(scene);
-        stage.show();
+        //  root.setPadding((new Insets(10, 50, 50, 50)));
+        tab.setContent(root);
+        tab.setText(file.getName().substring(0, file.getName().length() - 4));
+        tab.setOnCloseRequest(e -> {
+
+            try {
+                if (strings.equals(loader.load(file))) {
+                    //for getting insure that we don't lose any data I trigger save1 button which is not neccessary
+                    //but releves me from the fact that users might use data
+                    save1.fire();
+                    tab.setDisable(true);
+
+                } else {
+                    exit();
+                }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+        return tab;
     }
 
     public void exit() {
@@ -191,58 +215,68 @@ ListOfDics listOfDics = new ListOfDics();
                 File file1 = null;
 
                 if (event.getSource().equals(btn1)) {
-                 FileChooser dchooser = new FileChooser();
+                    FileChooser dchooser = new FileChooser();
                     FileChooser.ExtensionFilter extFilter =
                             new FileChooser.ExtensionFilter("TEXT files (*.txt)", "*.txt");
                     dchooser.getExtensionFilters().add(extFilter);
-                 file1 = dchooser.showSaveDialog(null);
+                    file1 = dchooser.showSaveDialog(null);
 
                 } else {
                     file1 = file;
                 }
 
-SaveTheCurrent(file1);
+                SaveTheCurrent(file1);
                 newStage.close();
-                stage.close();
+                tab.setDisable(true);
             }
         };
         btn1.setOnAction(event);
         btn2.setOnAction(event);
-        TilePane tilePane = new TilePane();
-        tilePane.setPrefColumns(1);
-        tilePane.getChildren().addAll(btn1, btn2, btn3);
-        VBox vBox = new VBox(tilePane);
+        VBox vBox1 = new VBox();
+        vBox1.getChildren().addAll(btn1, btn2, btn3);
         btn3.setOnAction(e -> {
             newStage.close();
-            stage.close();
+            tab.setDisable(true);
         });
-
-        Scene newScene = new Scene(vBox);
+        vBox1.setAlignment(Pos.CENTER);
+        vBox1.setSpacing(5);
+        vBox1.setPadding(new Insets(5, 5, 5, 5));
+        Scene newScene = new Scene(vBox1);
         newStage.setTitle("Close");
         newStage.setScene(newScene);
         newStage.showAndWait();
 
 
     }
-public  void SaveTheCurrent(File file1){
+
+    public void SaveTheCurrent(File file1) {
 
 
+        try {
+            FileWriter fileWriter = new FileWriter(file1);
+            for (String s : strings) {
+                fileWriter.write(s);
+                fileWriter.write(13);
+                fileWriter.write(10);
 
 
-    try {
-        FileWriter fileWriter = new FileWriter(file1);
-        for (String s : strings) {
-            fileWriter.write(s);
-            fileWriter.write(13);
-            fileWriter.write(10);
-
-
+            }
+            fileWriter.flush();
+            fileWriter.close();
+        } catch (NullPointerException | IOException n) {
+            System.out.println("nullfile 999");
         }
-        fileWriter.flush();
-        fileWriter.close();
-    } catch (NullPointerException | IOException n) {
-        System.out.println("nullfile 999");
+
     }
 
-}
+    public void openInBrowser() {
+        try {
+            Desktop desktop = Desktop.getDesktop();
+            URI oURL = new URI(listOfDics.getComboBox().getSelectionModel().getSelectedItem().site + listOfWords.getSelectionModel().getSelectedItem());
+            desktop.browse(oURL);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
 }

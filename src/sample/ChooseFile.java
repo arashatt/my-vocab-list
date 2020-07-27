@@ -7,25 +7,29 @@ import java.awt.*;
 import java.io.File;
 
 public class ChooseFile {
-    Desktop desktop = Desktop.getDesktop();
+    static PreferenceClass preferenceClass = new PreferenceClass();
     FileChooser fileChooser = new FileChooser();
-    Stage primaryStage;
 
-    public ChooseFile(Stage stage) {
-
-        primaryStage = stage;
-
-
+    public ChooseFile() {
         fileChooser.setTitle("Loading file");
         // fileChooser.showOpenDialog(primaryStage);
+        if (!preferenceClass.getDirectoryPreferences().isEmpty()) {
+            File initdir = new File(preferenceClass.getDirectoryPreferences());
+            fileChooser.setInitialDirectory(initdir);
 
-
+        }
     }
 
     public File getFile() {
+        //updating initial directory from user preferencs
+        if (!preferenceClass.getDirectoryPreferences().isEmpty()) {
+            File initdir = new File(preferenceClass.getDirectoryPreferences());
+            fileChooser.setInitialDirectory(initdir);
+
+        }
         File file = null;
         try {
-            file = fileChooser.showOpenDialog(primaryStage);
+            file = fileChooser.showOpenDialog(null);
 
         } catch (NullPointerException nu) {
             System.out.println("the user did't chose any file");

@@ -4,30 +4,47 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class Main extends Application {
-
-
+    TabPane tabPane = new TabPane();
+    ChooseFile chooseFile = new ChooseFile();
     private Scene mainScene;
-    VBox vBox= new VBox();
-Button newList = new Button("New List");
+    VBox vBox = new VBox();
+
+    Button newList = new Button("New List");
+
     public void start(Stage primaryStage) throws Exception {
-        vBox.getChildren().add(newList );
+
+        vBox.getChildren().addAll(newList, PreferenceClass.prefdir, tabPane);
         ArrayList<List> lists = new ArrayList<>();
-        newList.setOnAction(e ->{
-            try {
-                lists.add(new List());
-            } catch (Exception ex) {
-                ex.printStackTrace();
+        newList.setOnAction(e -> {
+            File file = chooseFile.getFile();
+            if (file != null) {
+                lists.add(new List(file));
+
+                try {
+                    tabPane.getTabs().add(lists.get(lists.size() - 1).list());
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
             }
+
         });
-        vBox.setPadding(new Insets(10,50,10,50));
-        mainScene = new Scene(vBox);
+        vBox.setPadding(new Insets(10, 50, 10, 50));
+        mainScene = new Scene(vBox, 350, 700);
+
+        primaryStage.setHeight(700);
         primaryStage.setScene(mainScene);
+
         primaryStage.show();
 
     }

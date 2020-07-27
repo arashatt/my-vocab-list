@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="untitled8:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="the better version&#10;-user preferences directory&#10;-all lists in TabPane&#10;-if use close request any tab it will automaticly close if no changes detected">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/untitled8_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/PreferenceClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/StickyNote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled8/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/ChooseFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/ChooseFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/Dictionary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/List$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/List$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/List$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/List$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/List$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/List$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/List$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/List$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/List$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/List.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/List.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/ListOfDics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/ListOfDics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/LoadingFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/LoadingFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled8/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled8/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ChooseFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ChooseFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/LoadingFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/LoadingFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled8.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +88,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -63,8 +97,18 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="arash &lt;attariarash@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1fDEGmpNGyb2x0f55Nw5uy6Tw0f" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -81,13 +125,23 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -121,9 +175,10 @@
       <Port>5050</Port>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8 (3)" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="untitled8" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.*" />
@@ -186,6 +241,8 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1595744170631" duration="823000" />
+      <workItem from="1595876527897" duration="468000" />
+      <workItem from="1595880403012" duration="10607000" />
     </task>
     <servers />
   </component>
@@ -195,16 +252,29 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="31" key="#Project_Structure" timestamp="1595744193877">
+    <state x="275" y="31" key="#Project_Structure" timestamp="1595876937492">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="31" key="#Project_Structure/0.0.1366.738@0.0.1366.738" timestamp="1595744193877" />
+    <state x="275" y="31" key="#Project_Structure/0.0.1366.738@0.0.1366.738" timestamp="1595876937492" />
+    <state x="137" y="28" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595876690162">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="137" y="28" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1595876690162" />
     <state x="442" y="212" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1595744985710">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="442" y="212" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1366.738@0.0.1366.738" timestamp="1595744985710" />
+    <state x="488" y="77" key="#com.intellij.ide.util.MemberChooser" timestamp="1595880714137">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="488" y="77" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1595880714137" />
+    <state x="713" y="381" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1595891426553">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="713" y="381" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1595891426553" />
     <state x="413" y="120" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595744572024">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -213,25 +283,58 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="127" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1366.738@0.0.1366.738" timestamp="1595744187341" />
+    <state x="46" y="0" key="CommitChangelistDialog2" timestamp="1595892178755">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="46" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1595892178755" />
+    <state x="129" y="62" key="DiffContextDialog" timestamp="1595892023634">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="129" y="62" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1595892023634" />
+    <state x="463" y="114" key="FileChooserDialogImpl" timestamp="1595876589131">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="114" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1595876589131" />
     <state x="521" y="287" width="347" height="163" key="Github.CreateGistDialog" timestamp="1595744860959">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="521" y="287" width="347" height="163" key="Github.CreateGistDialog/0.0.1366.738@0.0.1366.738" timestamp="1595744860959" />
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1595744750571">
+    <state width="1323" height="91" key="GridCell.Tab.0.bottom" timestamp="1595892178821">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1595744750571" />
-    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1595744750570">
+    <state width="1323" height="91" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1595892178821" />
+    <state width="1877" height="91" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1595891284949" />
+    <state width="1323" height="91" key="GridCell.Tab.0.center" timestamp="1595892178820">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1595744750570" />
-    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1595744750570">
+    <state width="1323" height="91" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1595892178820" />
+    <state width="1877" height="91" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1595891284948" />
+    <state width="1323" height="91" key="GridCell.Tab.0.left" timestamp="1595892178820">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1595744750570" />
-    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1595744750571">
+    <state width="1323" height="91" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1595892178820" />
+    <state width="1877" height="91" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1595891284948" />
+    <state width="1323" height="91" key="GridCell.Tab.0.right" timestamp="1595892178821">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1595744750571" />
+    <state width="1323" height="91" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1595892178821" />
+    <state width="1877" height="91" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1595891284949" />
+    <state x="463" y="171" key="SettingsEditor" timestamp="1595891436184">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="463" y="171" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1595891436184" />
+    <state x="694" y="411" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595886541045">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="494" y="289" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1595884781276" />
+    <state x="694" y="411" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1595886541045" />
+    <state x="65" y="97" key="new project wizard" timestamp="1595876708247">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="65" y="97" key="new project wizard/0.0.1366.738@0.0.1366.738" timestamp="1595876708247" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1595890640999">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1595890640999" />
   </component>
 </project>
