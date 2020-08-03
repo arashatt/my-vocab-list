@@ -41,8 +41,15 @@ public class Main extends Application {
         });
         vBox.setPadding(new Insets(10, 50, 10, 50));
         mainScene = new Scene(vBox, 350, 700);
-
+primaryStage.setOnCloseRequest(e->{
+    for(List li: lists){
+        if(li.isOpen){
+            li.exit();
+        }
+    }
+});
         primaryStage.setHeight(700);
+        primaryStage.setTitle("Welcome \u2660\u2665\u2663\u2666");
         primaryStage.setScene(mainScene);
 
         primaryStage.show();

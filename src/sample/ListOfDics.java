@@ -22,7 +22,8 @@ public class ListOfDics {
         listOfDic.addAll( longman,freeCollocation,powerThreasure,cambridge,collins,powerThreasure,learners);
         comboBox = new ComboBox();
         comboBox.setItems(listOfDic);
-        comboBox.getSelectionModel().select(longman);
+        comboBox.getSelectionModel().select(PreferenceClass.prefs.getInt(PreferenceClass.ID2,-1));
+       // comboBox.getSelectionModel().select();
     }
 
 

@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
@@ -13,9 +14,11 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -34,6 +37,7 @@ import java.net.URLEncoder;
 import java.util.TreeSet;
 
 public class List {
+    TextField searchAndDiscard = new TextField();
     Tab tab = new Tab();
     ListOfDics listOfDics = new ListOfDics();
     ListView<String> listOfWords = new ListView<>();
@@ -47,9 +51,11 @@ public class List {
     Button save1 = new Button("Save the changes");
     HBox hb = new HBox(chooseFile, save1);
     String undo = "";
+    boolean isOpen;
 
     public List(File file) {
         this.file = file;
+        isOpen = true;
     }
 
     public Tab list() throws Exception, NullPointerException {
@@ -68,21 +74,20 @@ public class List {
 
                 } else {
                     for (String s : strings) {
-
-                        if (s.substring(0, search.getText().length()).equals(search.getText())) {
-                            listOfWords.scrollTo(s);
-                            listOfWords.getSelectionModel().select(s);
-                            listOfWords.getFocusModel().focus(listOfWords.getItems().indexOf(s));
-                            search.clear();
-                            break;
-                        }
+                        if (search.getText().length() <= s.length())
+                            if (s.substring(0, search.getText().length()).equals(search.getText())) {
+                                listOfWords.scrollTo(s);
+                                listOfWords.getSelectionModel().select(s);
+                                listOfWords.getFocusModel().focus(listOfWords.getItems().indexOf(s));
+                                search.clear();
+                                break;
+                            }
                     }
                 }
 
                 //   System.out.println("yeey"+      listOfWords.getFocusModel().isFocused(listOfWords.getItems().indexOf(search.getText()) ));                search.clear();
                 listOfWords.requestFocus();
 
-                System.out.println(listOfWords.isFocused());
 
             }
 
@@ -114,16 +119,26 @@ public class List {
         input.setOnAction(e -> {
             listOfWords.getItems().clear();
             listOfWords.getItems().addAll(loader.addOneWord(input.getText()));
+int index =listOfWords.getItems().indexOf(input.getText());
+            listOfWords.scrollTo(index);
+            listOfWords.getSelectionModel().select(index);
+            listOfWords.getFocusModel().focus(index);
+            listOfWords.requestFocus();
             input.clear();
 
 
+        });
+        searchAndDiscard.setPromptText("Search And Discard");
+        searchAndDiscard.setOnAction(e->{
+            openInBrowser(searchAndDiscard.getText());
+            searchAndDiscard.clear();
         });
         listOfWords.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 if (event.getButton().equals(MouseButton.PRIMARY)) {
                     if (event.getClickCount() == 2) {
-                        openInBrowser();
+                        openInBrowser( listOfWords.getSelectionModel().getSelectedItem());
                     }
                 } else if (event.getButton().equals(MouseButton.SECONDARY)) {
 
@@ -137,7 +152,7 @@ public class List {
                 if (event.getCode().equals(KeyCode.ENTER)) {
 
 
-                    openInBrowser();
+                    openInBrowser( listOfWords.getSelectionModel().getSelectedItem());
 
                 }
                 if (event.getCode().equals(KeyCode.DELETE)) {
@@ -146,8 +161,7 @@ public class List {
 
                         undo = listOfWords.getSelectionModel().getSelectedItem();
                         listOfWords.getFocusModel().focusNext();
-                        listOfWords.scrollTo(listOfWords.getSelectionModel().getSelectedIndex() + 1);
-                        strings.remove(undo);
+                       strings.remove(undo);
                         listOfWords.getItems().clear();
                         listOfWords.getItems().addAll(strings);
                     } catch (NullPointerException nu) {
@@ -162,6 +176,7 @@ public class List {
                         listOfWords.getItems().addAll(loader.addOneWord(undo));
                     }
                 }
+                if(event.getCode().compareTo(KeyCode.A) >= 0 && event.getCode().compareTo(KeyCode.Z) <= 0  )
                 if (event.getText().toLowerCase().charAt(0) >= 'a' || event.getText().toLowerCase().charAt(0) <= 'z') {
                     for (String s : strings) {
 
@@ -177,13 +192,14 @@ public class List {
             }
         });
 
-        root = new VBox(input, search, listOfWords, listOfDics.getComboBox(), hb);
+        root = new VBox(input, search, listOfWords, listOfDics.getComboBox(), searchAndDiscard,hb);
         root.setSpacing(15);
         //  root.setPadding((new Insets(10, 50, 50, 50)));
         tab.setContent(root);
         tab.setText(file.getName().substring(0, file.getName().length() - 4));
         tab.setOnCloseRequest(e -> {
-
+            PreferenceClass.prefs.putInt(PreferenceClass.ID2,listOfDics.comboBox.getSelectionModel().getSelectedIndex());
+            isOpen = false;
             try {
                 if (strings.equals(loader.load(file))) {
                     //for getting insure that we don't lose any data I trigger save1 button which is not neccessary
@@ -202,6 +218,8 @@ public class List {
     }
 
     public void exit() {
+        PreferenceClass.prefs.putInt(PreferenceClass.ID2,listOfDics.comboBox.getSelectionModel().getSelectedIndex());
+
         Stage newStage = new Stage();
 //
 //newStage.setOnCloseRequest(event -> {
@@ -232,17 +250,34 @@ public class List {
         };
         btn1.setOnAction(event);
         btn2.setOnAction(event);
-        VBox vBox1 = new VBox();
-        vBox1.getChildren().addAll(btn1, btn2, btn3);
+        GridPane vBox1 = new GridPane();
+        Label labaleName = new Label("Close: " + file.getName().substring(0, file.getName().length() - 4));
+        vBox1.setAlignment(Pos.CENTER);
+        vBox1.add(labaleName, 0, 0);
+        vBox1.add(btn1, 0, 1);
+        vBox1.add(btn2, 0, 2);
+        vBox1.add(btn3, 0, 3);
+        vBox1.setVgap(5);
+        //full extending buttons
+        labaleName.setPrefHeight(Integer.MAX_VALUE);
+        labaleName.setPrefWidth(Integer.MAX_VALUE);
+        labaleName.setFont(new Font(Integer.SIZE));
+        btn1.setPrefHeight(Integer.MAX_VALUE);
+        btn1.setPrefWidth(Integer.MAX_VALUE);
+        btn2.setPrefHeight(Integer.MAX_VALUE);
+        btn2.setPrefWidth(Integer.MAX_VALUE);
+        btn3.setPrefHeight(Integer.MAX_VALUE);
+        btn3.setPrefWidth(Integer.MAX_VALUE);
+        // vBox1.getChildren().addAll(btn1, btn2, btn3);
         btn3.setOnAction(e -> {
             newStage.close();
             tab.setDisable(true);
         });
-        vBox1.setAlignment(Pos.CENTER);
-        vBox1.setSpacing(5);
+
         vBox1.setPadding(new Insets(5, 5, 5, 5));
-        Scene newScene = new Scene(vBox1);
-        newStage.setTitle("Close");
+        Scene newScene = new Scene(vBox1, 277, 220);
+
+        newStage.setTitle("Close: " + file.getName().substring(0, file.getName().length() - 4));
         newStage.setScene(newScene);
         newStage.showAndWait();
 
@@ -269,10 +304,10 @@ public class List {
 
     }
 
-    public void openInBrowser() {
+    public void openInBrowser(String word) {
         try {
             Desktop desktop = Desktop.getDesktop();
-            URI oURL = new URI(listOfDics.getComboBox().getSelectionModel().getSelectedItem().site + listOfWords.getSelectionModel().getSelectedItem());
+            URI oURL = new URI(listOfDics.getComboBox().getSelectionModel().getSelectedItem().site +word);
             desktop.browse(oURL);
         } catch (Exception ex) {
             ex.printStackTrace();
